@@ -76,16 +76,16 @@ def conjugate_gradient(A, b, x0, tol=1e-10, max_iter=1000):
         rs_old = rs_new
     return x, max_iter
 
-# 解法
+# solution
 x_jacobi, iter_jacobi = jacobi(A, b, x0)
 x_gs, iter_gs = gauss_seidel(A, b, x0)
 x_sor, iter_sor = sor(A, b, x0, omega=1.25)
 x_cg, iter_cg = conjugate_gradient(A, b, x0)
 
-# 直接法參考答案
+# Exact solution to compare
 x_exact = np.linalg.solve(A, b)
 
-# 顯示結果
+# print
 np.set_printoptions(precision=6, suppress=True)
 
 print("*(a)Jacobi")
